@@ -209,6 +209,8 @@ public class RunGame {
                         monsterHealth -= 300;
                         if (monsterHealth <= 0) {
                             System.out.println("The monster perishes after your attack!");
+                            System.out.println("The monster dropped " + monsterLoot + " gold.");
+                            gold += monsterLoot;
                             hasMonsters = false;
                         }
                     } else if (encounterAction.equalsIgnoreCase("Sword Slash") && type.equalsIgnoreCase("Knight")
@@ -218,11 +220,13 @@ public class RunGame {
                     //Wizard
                     //Damage
                     if (encounterAction.equalsIgnoreCase("Fireball") && type.equalsIgnoreCase("Wizard")
-                    && wizardDamage >0) {
+                    && wizardDamage > 0) {
                         System.out.println("You use your ability and deal 200 damage to the monster!");
                         monsterHealth -= 200;
                         if (monsterHealth <= 0) {
                             System.out.println("The monster perishes after your attack!");
+                            System.out.println("The monster dropped " + monsterLoot + " gold.");
+                            gold += monsterLoot;
                             hasMonsters = false;
                         }
                     } else if (encounterAction.equalsIgnoreCase("Fireball") && type.equalsIgnoreCase("Wizard")
@@ -316,13 +320,14 @@ public class RunGame {
             roomClearAction = input.nextLine();
 
             //Wizard Heal
-            if (roomClearAction.equalsIgnoreCase("Fireball") && type.equalsIgnoreCase("Wizard")
+            if (roomClearAction.equalsIgnoreCase("Healing Potion") && type.equalsIgnoreCase("Wizard")
                     && wizardHeal > 0) {
                 System.out.println("You use your ability and heal yourself to " + maxHealth + " health!");
                 health = maxHealth;
-            } else if (roomClearAction.equalsIgnoreCase("Fireball") && type.equalsIgnoreCase("Wizard")
+            } else if (roomClearAction.equalsIgnoreCase("Healing Potion") && type.equalsIgnoreCase("Wizard")
                     && wizardHeal <= 0) {
-                System.out.println("You're all out of Fireballs");
+                System.out.println("You are all out of Healing Potions");
+                health = maxHealth;
             }
 
             //Search Room
@@ -392,5 +397,8 @@ public class RunGame {
 
 
         }
+
+        System.out.println("You open the final door and before you is the portal out! You step through it and escape.");
+        System.out.println("Total Gold: " + gold);
     }
 }

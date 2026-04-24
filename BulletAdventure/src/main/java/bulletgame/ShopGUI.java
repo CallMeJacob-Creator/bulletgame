@@ -55,14 +55,14 @@ public class ShopGUI {
             System.out.println();
             //Selection
             if (type.equalsIgnoreCase("Knight")) {
-                System.out.println("[40] +1 'KnightSlash'");
+                System.out.println("[40] +1 'Sword Slash'");
                 System.out.println("[30] 'Sharpen Sword' +20 Attack");
                 System.out.println("[35] 'Forge Armor' +20 Health");
                 System.out.println("[40] 'Restore' Max Health");
                 System.out.println("'Exit' to leave the store");
             } else  if (type.equalsIgnoreCase("Wizard")) {
-                System.out.println("[35] +1 'WizardHeal'");
-                System.out.println("[50] +1 'WizardDamage'");
+                System.out.println("[35] +1 'Healing Potion'");
+                System.out.println("[50] +1 'Fireball'");
                 System.out.println("[20] 'Enchant Staff' +10 Attack");
                 System.out.println("[25] 'Refit Cloak' +10 Health");
                 System.out.println("[40] 'Restore' Max Health");
